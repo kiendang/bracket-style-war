@@ -11872,7 +11872,7 @@ while ...
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Personally I prefer the same-line style. I can't justify a single bracket occupying a whole line. And since you have code indentation you don't really need opening bracket on a new line to see where your code block begins. And of course the most important reason: same-lines just look much prettier, but that's just my opinion and I know quite a few people who disagree with me.</p>
 <p>I was curious to see which style is more popular. Having too much time on my hands I conducted a survey around the office, but the sample size is too small so it doesn't really mean anything.</p>
-<p>Thus I decided to just ask every one in the <code>R</code> developer community (or at least the most important people) instead. The idea is simple: crawl code from the most popular <code>R</code> packages and see which style is used most often.</p>
+<p>Thus I decided to just ask every one in the <code>R</code> developer community (or at least the most important people) instead. The idea is simple: crawl code from the most popular <code>R</code> packages and see which style is used more.</p>
 <p>Below is the code + explanation. If you are impatient or just want to see the result here's a <a href="#And-the-results">TL;DR</a>. If you are even more impatient here's a <a href="#Conclusion">TL;DR(TL;DR)</a>. If you are interested in trying this yourself here's the <a href="https://github.com/kiendang/bracket-style-war">link</a> to the Jupyter notebook.</p>
 
 </div>
@@ -11968,7 +11968,7 @@ The following object is masked from ‘package:DBI’:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Getting-the-100-most-downloaded-packages">Getting the 100 most downloaded packages<a class="anchor-link" href="#Getting-the-100-most-downloaded-packages">&#182;</a></h2><p><a href="http://cran-logs.rstudio.com/">cran-logs</a> provides package download statistics of <a href="http://cran.rstudio.com/">RStudio CRAN mirror</a> in csv format. Each file contains download data in one day from 01/10/2012 to present. A row in a file corresponds to 1 download, which tell us which package was downloaded, at what time and from where, as well as other information.</p>
-<p>We can get the names of the 100 most downloaded packages by downloading all these files, merging them in some way, counting the total number of downloads by packages and choose the 100 packages with the most download counts.</p>
+<p>We can get the names of the 100 most downloaded packages by downloading all these files, merging them, counting the total number of downloads by packages and choose the 100 packages with the most download counts.</p>
 
 </div>
 </div>
@@ -12197,7 +12197,7 @@ conn <span class="o">&lt;-</span> dbConnect<span class="p">(</span>MonetDBLite<s
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Create a table to store all the file in <code>MonetDB</code> by read in the first file. Here I'm not running this command as well as the next one since I've already read all the files into the database before. However if you want to try this yourself you should run those 2 (one time only).</p>
+<p>Next we create a table to store all the file in <code>MonetDB</code> by read in the first file. Here I'm not running this command as well as the next one since I've already read all the files into the database before. However if you want to try this yourself you should run those 2 (one time only).</p>
 
 </div>
 </div>
@@ -12407,7 +12407,7 @@ TRUE
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Counting-number-of-matches-in-each-style-in-each-package">Counting number of matches in each style in each package<a class="anchor-link" href="#Counting-number-of-matches-in-each-style-in-each-package">&#182;</a></h2><p>Here we're going to count the number of strings that match either the same line style or the new line style for each package.</p>
-<p>The way we're doing it is download all the <em>.R</em> files in each package. Those reside in the <em>R</em> directory on the package. Then we go through each file, count the total number of same-lines and new-lines. We do that for all the 100 packages.</p>
+<p>The way we're doing it is download all the <em>.R</em> files in each package. Those reside in the <em>R</em> directory. We go through each file, count the total number of same-lines and new-lines. We do that for all 100 packages.</p>
 
 </div>
 </div>
@@ -12861,7 +12861,7 @@ styles_by_pkgs
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we visualize the results to clearly see how not-a-fair-fight this is. First we combine the two data frames to use with <code>ggplot2</code>.</p>
+<p>Now we visualize the results to clearly see how not-a-fair-fight this is:</p>
 
 </div>
 </div>
