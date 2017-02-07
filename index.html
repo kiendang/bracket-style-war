@@ -11778,7 +11778,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="End-the-Bracket-War">End the Bracket War<a class="anchor-link" href="#End-the-Bracket-War">&#182;</a></h1><p><em>or at least an attempt to</em></p>
+<h1 id="function()-{-vs-function()\n{">function() { vs function()\n{<a class="anchor-link" href="#function()-{-vs-function()\n{">&#182;</a></h1><p><em>A survey on R bracket styles</em></p>
 
 </div>
 </div>
@@ -11789,47 +11789,88 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A few days ago we started an <code>R</code> project at work. We want the code to be as consistent as possible but don't really have a coding style guide in place to follow so we decided to just make one. One of the things we need to settle on is where to place the opening bracket of a code block (It's the most important thing in the world I know), on which we disagree with one other. Basically there are 2 dominant styles:</p>
-
-<pre><code>function(...) {
+<table>
+<tr>
+<td>Same line</td>
+<td>
+<pre>
+<code>
+function(...) {
     ...
     return()
 }
-
+</code>
+</pre>
+</td>
+<td>
+<pre>
+<code>
 if ... {
     ...
 } else {
     ...
 }
-
+</code>
+</pre>
+</td>
+<td>
+<pre>
+<code>
 while ... {
     ...
 }
-
-</code></pre>
-<p>which I call the same-line style, and</p>
-
-<pre><code>function(...)
+</code>
+</pre>
+</td>
+</tr>
+<tr>
+<td>New line</td>
+<td>
+<pre>
+<code>
+function(...)
 {
     ...
     return()
 }
-
+</code>
+</pre>
+</td>
+<td>
+<pre>
+<code>
 if ...
 {
     ...
-} 
+}
 else
 {
     ...
 }
-
+</code>
+</pre>
+</td>
+<td>
+<pre>
+<code>
 while ...
 {
     ...
 }
-
-</code></pre>
-<p>which I call the new-line style. Personally I prefer the same-line style. I can't justify a single bracket occupying a whole line. And since you have code indentation you don't really need opening bracket on a new line to see where your code block begins. And of course the most important reason: same-lines just look much prettier, but that's just my opinion and I know quite a few people who disagree with me.</p>
+</code>
+</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Personally I prefer the same-line style. I can't justify a single bracket occupying a whole line. And since you have code indentation you don't really need opening bracket on a new line to see where your code block begins. And of course the most important reason: same-lines just look much prettier, but that's just my opinion and I know quite a few people who disagree with me.</p>
 <p>I was curious to see which style is more popular. Having too much time on my hands I conducted a survey around the office, but the sample size is too small so it doesn't really mean anything.</p>
 <p>Thus I decided to just ask every one in the <code>R</code> developer community (or at least the most important people) instead. The idea is simple: crawl code from the most popular <code>R</code> packages and see which style is used most often.</p>
 <p>Below is the code + explanation. If you are impatient or just want to see the result here's a <a href="#And-the-results">TL;DR</a>. If you are even more impatient here's a <a href="#Conclusion">TL;DR(TL;DR)</a>. If you are interested in trying this yourself here's the <a href="https://github.com/kiendang/bracket-style-war">link</a> to the Jupyter notebook.</p>
